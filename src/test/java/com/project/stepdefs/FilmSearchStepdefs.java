@@ -7,14 +7,14 @@ import methods.DataVerify;
 public class FilmSearchStepdefs {
 
     @Given("By Search altinda {string} ve {string} yili icin arama yapilir ve {string} filmin IMDB ID'si alinir.")
-    public void bySearchAltındaVeYılıIçinAramaYapılırVeFilminIMDBIDSiAlınır(String filmTitle, String year, String desiredFilm) {
+    public void filmIsimVeTarihGoreSearch(String filmTitle, String year, String desiredFilm) {
 
         DataVerify dataVerify = new DataVerify();
         dataVerify.getFilmByTitle(filmTitle, year, desiredFilm);
     }
 
     @Then("Arama yapılan filmin ımdb Id'si ile arama yapılır.")
-    public void aramaYapılanFilminImdbIdSiIleAramaYapılır() {
+    public void imdbIdIleSearch() {
         DataVerify dataVerify = new DataVerify();
         dataVerify.searchWithID();
     }
